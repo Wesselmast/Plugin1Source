@@ -95,8 +95,6 @@ void FirstPluginEverAudioProcessor::changeProgramName (int index, const String& 
 //==============================================================================
 void FirstPluginEverAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
-    // Use this method as the place to do any pre-playback
-    // initialisation that you need..
 }
 
 void FirstPluginEverAudioProcessor::releaseResources()
@@ -133,8 +131,6 @@ void FirstPluginEverAudioProcessor::processBlock (AudioBuffer<float>& buffer, Mi
 {
     const int totalNumInputChannels  = getTotalNumInputChannels();
     const int totalNumOutputChannels = getTotalNumOutputChannels();
-
-	rawVolume = 0.5;
 
     for (int i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
